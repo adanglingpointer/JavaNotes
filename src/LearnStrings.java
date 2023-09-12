@@ -12,7 +12,8 @@ public class LearnStrings {
             Ctrl + B + click on method = take you to method
             Ctrl + N = brings up search, search for file/class
             Ctrl + O = override
-            Ctrl + Alt + V = highlight a number to assign to a variable
+            Ctrl + Alt + V = highlight a number/string to assign to a variable
+            Shift + F6 = rename all instances of a variable
          */
 
         /* ~ String concatenation ~ */
@@ -22,6 +23,7 @@ public class LearnStrings {
         System.out.println(firstWord.concat(" ".concat(secondWord)));
 
 //        Best for three or more strings, memory efficient
+//        Can add final string length as a parameter
         String finalString = new StringBuilder()
                 .append(firstWord)
                 .append(" ")
@@ -46,7 +48,32 @@ public class LearnStrings {
         /* ~ String length ~ */
         // ----------------- //
 
-        System.out.println(firstWord.length());
+        int stringLength = firstWord.length();
+        System.out.println(stringLength);  // 5
+
+        /* ~ Substrings ~ */
+        // -------------- //
+
+        String startAtIndex = firstWord.substring(1);
+        System.out.println(startAtIndex);  // pple
+
+        String includeCharactersBetween = firstWord.substring(0, 2);
+        System.out.println(includeCharactersBetween);  // Ap
+
+        String lowerCaseWord = "apple";
+        String upperCaseLetter = lowerCaseWord.substring(0, 1).toUpperCase();
+        String upperCaseWord = upperCaseLetter + lowerCaseWord.substring((1));
+        System.out.println(upperCaseWord);  // Apple
+
+        /* ~ indexOf ~ */
+        // ----------- //
+
+        String gettysburgAddress = "four score and seven years ago";
+        System.out.println(gettysburgAddress.indexOf("seven"));  // 15
+        System.out.println(gettysburgAddress.indexOf("SEVEN"));  // -1
+
+        System.out.println(gettysburgAddress.indexOf(115));  // 5
+        //  115 is the unicode for s
 
     }
 }
