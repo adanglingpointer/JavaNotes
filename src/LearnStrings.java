@@ -75,5 +75,50 @@ public class LearnStrings {
         System.out.println(gettysburgAddress.indexOf(115));  // 5
         //  115 is the unicode for s
 
+        System.out.println(gettysburgAddress.lastIndexOf("s"));  // 25
+
+        int fromIndex = 5;
+        System.out.println(gettysburgAddress.indexOf("o", fromIndex)); // 7
+        //  starting from character 5
+
+        /* ~ Quiz ~ */
+        // -------- //
+        // How can we parse the area code, exchange, and line number
+        //  for a phone number?
+
+        String phoneNumber = "(234) 333-4552";
+        String areaCode = parseAreaCode(phoneNumber);
+        String exchange = parseExchange(phoneNumber);
+        String lineNumber = parseLineNumber(phoneNumber);
+
+        System.out.println(areaCode);
+        System.out.println(exchange);
+        System.out.println(lineNumber);
+
+        /* ~ Remove Whitespace ~ */
+        String extraSpace = "  Pineapple ";
+        System.out.println(extraSpace.strip());  // Pineapple
+
+        /* ~ Split ~ */
+    }
+
+    public static String parseAreaCode(String phoneNumber) {
+        int openParens = phoneNumber.indexOf("(");
+        int closeParens = phoneNumber.indexOf(")");
+        String areaCode = phoneNumber.substring(openParens + 1, closeParens);
+        return areaCode;
+    }
+
+    public static String parseExchange(String phoneNumber){
+        int spaceIndex = phoneNumber.indexOf(" ");
+        int hyphenIndex = phoneNumber.indexOf("-");
+        String exchange = phoneNumber.substring(spaceIndex + 1, hyphenIndex);
+        return exchange;
+    }
+
+    public static String parseLineNumber(String phoneNumber){
+        int hyphenIndex = phoneNumber.indexOf("-");
+        String lineNumber = phoneNumber.substring(hyphenIndex + 1);
+        return lineNumber;
     }
 }
