@@ -18,6 +18,7 @@ public class LearnStrings {
             Ctrl + Alt + N = inline a variable
             Shift + F6 = rename all instances of a variable
             Alt + Shift + click = create two cursors to type on two lines
+            Ctrl + W = select larger bits of text within an element
          */
 
         /* ~ String concatenation ~ */
@@ -146,7 +147,6 @@ public class LearnStrings {
 
         System.out.println(secondText.contentEquals(firstText));  // true
         System.out.println(secondText.equals(firstText));  // false
-
 
     }
 
