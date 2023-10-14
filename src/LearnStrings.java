@@ -11,6 +11,7 @@ public class LearnStrings {
             Ctrl + Y = delete line
             Ctrl + / = comment out
             Ctrl + D = duplicate line
+            Alt + Shift + Down = move line down
             Ctrl + B + click on method = take you to method
             Ctrl + N = brings up search, search for file/class
             Ctrl + O = override
